@@ -44,9 +44,9 @@ jobs:
         DB_PORT: 5432
       run: |
         python -m ruff check backend/
-	python -m ruff format --check backend/
-	pycodestyle backend/
-	pre-commit run --all-files
+        python -m ruff format --check backend/
+        pycodestyle backend/
+        pre-commit run --all-files
         cd backend/
         python manage.py test
 
@@ -169,3 +169,4 @@ jobs:
           Сделал push ${{ github.actor }}♿
           Коммит https://github.com/${{ github.repository }}/commit/${{github.sha}}
           Сообщение💬: ${{ github.event.commits[0].message }}
+      
