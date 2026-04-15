@@ -1,26 +1,55 @@
-#  Как работать с репозиторием финального задания
+# Описание проекта
 
-## Что нужно сделать
+Проект помогает пользователям публиковать своих котиков и делиться ими с другими.
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+## Возможности
 
-## Как проверить работу с помощью автотестов
+- просмотр котиков, добавленных пользователями;
+- добавление своих котиков с указанием:
+  - фотографии;
+  - цвета;
+  - года рождения;
+  - великих достижений.
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+## Стек технологий
+
+- Python
+- Django
+- Django REST Framework
+- Djoser
+- PostgreSQL
+- psycopg2-binary
+- Pillow
+- React
+- JavaScript
+- CSS Modules
+- Docker
+- Docker Compose
+- Nginx
+- Gunicorn
+- pytest
+- pytest-django
+- Ruff
+- pycodestyle
+- PyYAML
+
+## Как развернуть проект
+
+1. Заполните файл `.env` на основе `.env.example`.
+
+2. Создайте Docker Volume:
+   ```bash
+   docker volume create pg_data
+   docker volume create static
+   docker volume create media
+   ```
+
+3. Запустите проект:
+   ```bash
+   docker compose up --build
+   ```
+
+## Остановить проект
 ```
-
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+docker compose down
+```

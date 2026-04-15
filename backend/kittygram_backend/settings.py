@@ -4,7 +4,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY", "test-secret-key")
+SECRET_KEY = os.getenv("SECRET_KEY", "secret-key")
 
 DEBUG = os.getenv("DEBUG") == "True"
 

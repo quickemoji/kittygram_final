@@ -164,7 +164,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: >
+        message: |
           Успешное завершение GitHub WorkFlow🎊!
           Сделал push ${{ github.actor }}♿
           Коммит https://github.com/${{ github.repository }}/commit/${{github.sha}}
