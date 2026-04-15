@@ -13,9 +13,9 @@ def _get_validated_link(
     link_key: str,
 ) -> str:
     _, path_to_deploy_info_file = deploy_file_info
-    assert link_key in deploy_info_file_content, (
-        f"Убедитесь, что файл `{path_to_deploy_info_file}` содержит ключ `{link_key}`."
-    )
+    assert (
+        link_key in deploy_info_file_content
+    ), f"Убедитесь, что файл `{path_to_deploy_info_file}` содержит ключ `{link_key}`."
     link: str = deploy_info_file_content[link_key]
     assert link.startswith("https"), (
         f"Убедитесь, что cсылка ключ `{link_key}` в файле "
