@@ -12,4 +12,4 @@ repos:
         entry: pycodestyle
         language: system
         types: [python]
-        args: [--max-line-length=79]
+        args: [--max-line-length=100]
