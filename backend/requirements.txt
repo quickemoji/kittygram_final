@@ -1,11 +1,10 @@
-Django
+Django==4.2.28
 djangorestframework
 djoser
 gunicorn
 webcolors
 psycopg2-binary
 Pillow
-pytest
+pytest>=7.0
 pytest-django
-pytest-pythonpath
 PyYAML
