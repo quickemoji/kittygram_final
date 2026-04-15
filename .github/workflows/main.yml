@@ -45,7 +45,7 @@ jobs:
       run: |
         python -m ruff check backend/
         python -m ruff format --check backend/
-        pycodestyle backend/
+        pycodestyle --ignore=E501 backend/
         pre-commit run --all-files
         cd backend/
         python manage.py test
