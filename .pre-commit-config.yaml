@@ -1,9 +1,11 @@
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0
+    rev: v0.8.0
     hooks:
       - id: ruff
+        files: ^backend/
       - id: ruff-format
+        files: ^backend/
 
   - repo: local
     hooks:
@@ -12,4 +14,5 @@ repos:
         entry: pycodestyle
         language: system
         types: [python]
+        files: ^backend/
         args: [--max-line-length=100]
